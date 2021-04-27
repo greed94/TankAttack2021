@@ -43,5 +43,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("방 입장 완료");
         Debug.Log(PhotonNetwork.CurrentRoom.Name);
+
+        // 통신이 가능한 주인공 캐릭터(탱크) 생성
+        PhotonNetwork.Instantiate("Tank",
+                                  new Vector3(20.0f, 5.0f, 20.0f),
+                                  Quaternion.identity,
+                                  0);
     }
 }
