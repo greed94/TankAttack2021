@@ -6,6 +6,7 @@ public class Cannon : MonoBehaviour
 {
     public float speed = 1000.0f;
     public GameObject sparkEffect;
+    public string shooter;
     
     private Rigidbody rb;
 
@@ -15,7 +16,7 @@ public class Cannon : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.AddRelativeForce(Vector3.forward * speed);
     }
-    
+
     void OnCollisionEnter(Collision coll)
     {
         GameObject spark = Instantiate(sparkEffect,

@@ -16,12 +16,15 @@ public class TankCtrl : MonoBehaviour
     public AudioClip sound;
     private new AudioSource audio;
 
+    public TMPro.TMP_Text userIdText;
 
     void Start()
     {
         tr = GetComponent<Transform>();    
         pv = GetComponent<PhotonView>();
         audio = GetComponent<AudioSource>();
+
+        userIdText.text = pv.Owner.NickName;
 
         if (pv.IsMine)
         {
@@ -54,15 +57,16 @@ public class TankCtrl : MonoBehaviour
             // 포탄 발사 로직
             if (Input.GetMouseButtonDown(0))
             {
-                pv.RPC("Fire", RpcTarget.AllViaServer, null);
+                pv.RPC("Fire", RpcTarget.AllViaServer, pv.Owner.NickName);
             }
         }
     }
 
     [PunRPC]
-    void Fire()
+    void Fire(string shooterName)
     {
-        Instantiate(cannon, firePos.position, firePos.rotation);
         audio?.PlayOneShot(sound);
+        GameObject _cannon = Instantiate(cannon, firePos.position, firePos.rotation);
+        _cannon.GetComponent<Cannon>().shooter = shooterName;
     }
 }
