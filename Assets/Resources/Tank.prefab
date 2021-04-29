@@ -478,7 +478,6 @@ GameObject:
   - component: {fileID: 3101136812008179026}
   - component: {fileID: 3101136812008179025}
   - component: {fileID: 6373251653789456885}
-  - component: {fileID: 6504308796014653850}
   - component: {fileID: 528366215049928122}
   - component: {fileID: 4250545181598133746}
   m_Layer: 0
@@ -575,26 +574,10 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 6504308796014653850}
-  sceneViewId: 1
+  - {fileID: 3101136812008179025}
+  sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &6504308796014653850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3101136812008211430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!82 &528366215049928122
 AudioSource:
   m_ObjectHideFlags: 0
