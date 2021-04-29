@@ -23,5 +23,6 @@ public class Cannon : MonoBehaviour
                                        transform.position,
                                        Quaternion.identity);
         Destroy(spark, 3.0f);
+        Destroy(this.gameObject);
     }
 }
